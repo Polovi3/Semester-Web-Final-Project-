@@ -1,4 +1,4 @@
-# Semester-Web-Final-Project-
+
 ## Website Snapsort:
 <img width="938" height="731" alt="image" src="https://github.com/user-attachments/assets/a6b3c0b2-185f-4e7e-9194-4e164da6d9d5" />
 <img width="924" height="677" alt="image" src="https://github.com/user-attachments/assets/c35b4198-7504-4082-891e-fe96e8b57275" />
