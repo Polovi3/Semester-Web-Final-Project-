@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    color: #333;
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.main-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Guides */
+.guides-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.guide-card {
+    background: white;
+    width: 300px;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.guide-card img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.link {
+    display: block;
+    font-size: 14px;
+    margin: 5px 0;
+    color: #0077cc;
+    text-decoration: none;
+}
+
+.read-btn {
+    margin-top: 15px;
+    background: #0077cc;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Sub Guides */
+.sub-guides {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.sub-card {
+    background: white;
+    border: 1px solid #ddd;
+    width: 350px;
+    text-align: center;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* Essential Reading */
+.reading-section {
+    text-align: center;
+    padding: 40px;
+}
+
+.reading-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.reading-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.reading-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.reading-card h4 {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.meta {
+    padding: 0 10px 15px;
+    font-size: 12px;
+    color: gray;
+}

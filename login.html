@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+h2 { text-align: center; margin-bottom: 15px; }
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0066ff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover { background: #004dcc; }
+
+p { text-align: center; margin-top: 10px; }
+
+p a { color: #0066ff; text-decoration: none; }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Log In</h2>
+
+    <form id="loginForm">
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password" required>
+
+        <button type="submit">Log In</button>
+    </form>
+
+    <p>Don’t have an account? <a href="signup.html">Register</a></p>
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    // Redirect to test.html after login
+    window.location.href = "test.html";
+});
+</script>
+
+</body>
+</html>

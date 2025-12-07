@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sell My Apartment – RealEstateX</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* Header */
+.header {
+    background: #003366;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Grid Container */
+.apartment-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Apartment Card */
+.apartment-card {
+    background: white;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.apartment-card:hover {
+    transform: translateY(-6px);
+}
+
+.apartment-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.apartment-info {
+    padding: 15px;
+}
+
+.apartment-info h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #003366;
+}
+
+.location {
+    color: #666;
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+.price {
+    color: #0066cc;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.buy-btn {
+    display: inline-block;
+    background: #0066ff;
+    padding: 10px 18px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: #003399;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <h1>Sell My Apartment</h1>
+    <p>Choose from the best apartments available near your location</p>
+</div>
+
+<!-- Apartment Cards -->
+<div class="apartment-container">
+
+    <!-- Card 1 -->
+    <div class="apartment-card">
+        <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471" alt="">
+        <div class="apartment-info">
+            <h3>3BHK Luxury Apartment</h3>
+            <p class="location">Dhanmondi, Dhaka</p>
+            <p class="price">৳ 1,20,00,000</p>
+            <a href="https://btibd.com/property/the-destination/" class="buy-btn">View Details</a>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="apartment-card">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750" alt="">
+        <div class="apartment-info">
+            <h3>Modern Family Flat</h3>
+            <p class="location">Bashundhara R/A, Dhaka</p>
+            <p class="price">৳ 95,00,000</p>
+            <a href="https://btibd.com/property/the-destination/" class="buy-btn">View Details</a>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="apartment-card">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267" alt="">
+        <div class="apartment-info">
+            <h3>Premium Smart Apartment</h3>
+            <p class="location">Gulshan-2, Dhaka</p>
+            <p class="price">৳ 2,50,00,000</p>
+            <a href="https://btibd.com/property/the-destination/" class="buy-btn">View Details</a>
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="apartment-card">
+        <img src="https://images.unsplash.com/photo-1560448075-bb4bd5a9aede" alt="">
+        <div class="apartment-info">
+            <h3>Stylish Studio Apartment</h3>
+            <p class="location">Mirpur DOHS, Dhaka</p>
+            <p class="price">৳ 65,00,000</p>
+            <a href="https://btibd.com/property/the-destination/" class="buy-btn">View Details</a>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="apartment-card">
+        <img src="https://images.unsplash.com/photo-1507086182425-4133c0c0c74f" alt="">
+        <div class="apartment-info">
+            <h3>High-Rise Corner View Flat</h3>
+            <p class="location">Uttara Sector-10, Dhaka</p>
+            <p class="price">৳ 1,40,00,000</p>
+            <a href="https://btibd.com/property/the-destination/" class="buy-btn">View Details</a>
+        </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="apartment-card">
+        <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c" alt="">
+        <div class="apartment-info">
+            <h3>Family-Friendly Apartment</h3>
+            <p class="location">Banani, Dhaka</p>
+            <p class="price">৳ 1,10,00,000</p>
+            <a href="https://btibd.com/property/the-destination/" class="buy-btn">View Details</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

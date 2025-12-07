@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealEstateX | Home</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body class="light">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">RealEstateX</div>
+
+        <nav>
+            <ul>
+                <li><a href="rent.html">Rent</a></li>
+                <li><a href="buy.html">Buy</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="buildings.html">Buildings</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+
+        <!-- <div class="nav-actions">
+    <button class="login-btn">Sign Up</button>
+    <button class="login-btn">Login</button>
+</div> -->
+<div class="auth-links">
+    <a href="signin.html">Sign In</a>
+    <span> | </span>
+    <a href="login.html">Log In</a>
+</div>
+
+<style>
+.auth-links {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.auth-links a {
+    color: #eaeaeb;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.auth-links a:hover {
+    color: #fdfdff;
+    text-decoration: underline;
+}
+</style>
+
+
+
+    </header>
+
+   <!-- HERO SECTION -->
+
+   
+    
+<section class="hero">
+    <div class="hero-content">
+        <h1>The easiest way to rent, buy & sell property</h1>
+
+        <div class="search-box">
+
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('rent')">Rent</button>
+                <button class="tab" onclick="switchTab('buy')">Buy</button>
+                <button class="tab" onclick="switchTab('sell')">Sell</button>
+            </div>
+
+            <div class="search-fields">
+                <select id="neighborhood">
+                    <option value="">Choose A Neighborhood</option>
+                    <option value="Mohhamodpur">Mohhamodpur</option>
+                    <option value="Mirpur">Mirpur</option>
+                    <option value="Dhanmondi">Dhanmondi</option>
+                    <option value="Gulshan">Gulshan</option>
+                    <option value="Bonani">Bonani</option>
+                </select>
+
+                <input id="minPrice" type="number" placeholder="Min Price">
+                <input id="maxPrice" type="number" placeholder="Max Price">
+
+                <button class="search-btn" onclick="runSearch()">Search</button>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<script>
+function runSearch() {
+    const neighborhood = document.getElementById("neighborhood").value;
+    const minPrice = document.getElementById("minPrice").value;
+    const maxPrice = document.getElementById("maxPrice").value;
+
+    if (!neighborhood) {
+        alert("Please select a neighborhood");
+        return;
+    }
+
+    alert(
+        "Search Results:\n" +
+        "Neighborhood: " + neighborhood + "\n" +
+        "Min Price: " + minPrice + "\n" +
+        "Max Price: " + maxPrice
+    );
+}
+
+function switchTab(tabName) {
+    document.querySelectorAll(".tab").forEach(btn => btn.classList.remove("active"));
+
+    if (tabName === "rent") document.querySelector(".tabs button:nth-child(1)").classList.add("active");
+    if (tabName === "buy") document.querySelector(".tabs button:nth-child(2)").classList.add("active");
+    if (tabName === "sell") document.querySelector(".tabs button:nth-child(3)").classList.add("active");
+}
+</script>
+
+
+<!-- INLINE JS (Allowed inside HTML) -->
+<script>
+function switchTab(name) {
+    const tabs = document.querySelectorAll(".tab");
+    tabs.forEach(t => t.classList.remove("active"));
+    document.querySelector(`button[onclick="switchTab('${name}')"]`).classList.add("active");
+}
+
+function runSearch() {
+    const hood = document.getElementById("neighborhood").value;
+    const min = document.getElementById("minPrice").value;
+    const max = document.getElementById("maxPrice").value;
+
+    const params = new URLSearchParams({
+        hood: hood,
+        min: min,
+        max: max
+    });
+
+    // Redirect to results page
+    window.location.href = "results.html?" + params.toString();
+}
+</script>
+
+<!-- On results.html page -->
+<script>
+const params = new URLSearchParams(window.location.search);
+document.getElementById("resultsTitle").textContent =
+    `Results for: ${params.get("hood") || "All Neighborhoods"} (Price: ${params.get("min") || 0} - ${params.get("max") || "Any"})`;
+</script>
+
+
+
+    <!-- INFO SECTION -->
+    <section class="info-section">
+        <h2>Trending Properties</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="">
+                <h3>Modern Luxury Apartment</h3>
+                <p>2 Bed | 2 Bath | $3,500/mo</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c" alt="">
+                <h3>Spacious Family Home</h3>
+                <p>4 Bed | 3 Bath | $850,000</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae" alt="">
+                <h3>City View Condo</h3>
+                <p>1 Bed | 1 Bath | $2,100/mo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <h2>Why Choose RealEstateX?</h2>
+        <ul>
+            <li>Largest verified property database</li>
+            <li>Trusted by thousands of buyers and renters</li>
+            <li>Accurate pricing and neighborhood insights</li>
+            <li>Simple and secure property transactions</li>
+        </ul>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 RealEstateX | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+<script>
+function runSearch() {
+    const neighborhood = document.getElementById("neighborhood").value;
+    const minPrice = document.getElementById("minPrice").value;
+    const maxPrice = document.getElementById("maxPrice").value;
+
+    if (!neighborhood) {
+        alert("Please select a neighborhood");
+        return;
+    }
+
+    alert(
+        "Search Results:\n" +
+        "Neighborhood: " + neighborhood + "\n" +
+        "Min Price: " + minPrice + "\n" +
+        "Max Price: " + maxPrice
+    );
+}
+
+function switchTab(tabName) {
+    // Remove active class
+    document.querySelectorAll(".tab").forEach(btn => btn.classList.remove("active"));
+
+    // Add active class
+    if (tabName === "rent") document.querySelector(".tabs button:nth-child(1)").classList.add("active");
+    if (tabName === "buy") document.querySelector(".tabs button:nth-child(2)").classList.add("active");
+    if (tabName === "sell") document.querySelector(".tabs button:nth-child(3)").classList.add("active");
+
+    console.log("Switched to:", tabName);
+}
+</script>
+</body>
+</html>

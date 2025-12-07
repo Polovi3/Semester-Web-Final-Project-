@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Results - RealEstateX</title>
+  <style>
+    body{font-family:Arial, sans-serif;margin:0;background:#f4f4f4}
+    header{background:#0b3d8a;color:#fff;padding:14px;text-align:center}
+    .container{max-width:900px;margin:30px auto;background:#fff;padding:20px;border-radius:8px}
+    .property{padding:12px;border:1px solid #ddd;margin:12px 0;border-radius:6px;background:#fafafa}
+  </style>
+</head>
+<body>
+  <header><h2>Search Results</h2></header>
+  <div class="container">
+    <h3 id="resultsTitle">Loading results...</h3>
+    <div id="resultsList"></div>
+  </div>
+
+  <script>
+    // read params
+    const params = new URLSearchParams(window.location.search);
+    const hood = params.get('hood') || '';
+    const min = params.get('min') || '';
+    const max = params.get('max') || '';
+    const category = params.get('category') || '';
+
+    // display header
+    document.getElementById('resultsTitle').textContent =
+      `${category ? category.toUpperCase() : 'Properties'} ${hood ? 'in ' + hood : 'in All Areas'} (Price: ${min || 0} - ${max || 'Any'})`;
+
+    // fake data (replace with API/DB later)
+    const propertyData = [
+      { name: "Luxury Apartment", price: 3500, hood: "Mohamodpur", type: "rent" },
+      { name: "Family Home", price: 850000, hood: "Mirpur", type: "buy" },
+      { name: "Budget Condo", price: 2100, hood: "Dhanmondi", type: "rent" },
+      { name: "Modern Studio", price: 1900, hood: "Gulshan", type: "rent" },
+      { name: "Seaside Villa", price: 1200000, hood: "Bonani", type: "buy" }
+    ];
+
+    // convert min/max to number if provided
+    const minNum = min ? Number(min) : null;
+    const maxNum = max ? Number(max) : null;
+
+    const filtered = propertyData.filter(p => {
+      if (category && p.type !== category) return false;
+      if (hood && p.hood !== hood) return false;
+      if (minNum !== null && p.price < minNum) return false;
+      if (maxNum !== null && p.price > maxNum) return false;
+      return true;
+    });
+
+    const list = document.getElementById('resultsList');
+    if (filtered.length === 0) {
+      list.innerHTML = '<p>No matching properties found.</p>';
+    } else {
+      filtered.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'property';
+        div.innerHTML = `<strong>${p.name}</strong><br>Location: ${p.hood}<br>Price: $${p.price}`;
+        list.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>
+<script>
+console.log('Redirecting to:', target);
+window.location.href = target;
+</script>
